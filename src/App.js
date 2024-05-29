@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
+import Tabs from "./Components/Tabs/Tabs";
+import createTabsComponent from "./createTabsComponent";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const data = [
+  { label: "Zakładka1", content: "content1" },
+  { label: "Zakładka2", content: "content2" },
+  { label: "Zakładka3", content: "content3" },
+  { label: "Zakładka4", content: "content4" },
+  { label: "Zakładka5", content: "content5" },
+  { label: "Zakładka6", content: "content6" },
+  { label: "Zakładka7", content: "content7" },
+  { label: "Zakładka8", content: "content8" },
+  { label: "Zakładka9", content: "content9" },
+  { label: "Zakładka10", content: "content10" },
+];
+const App = () => {
+  useEffect(() => {
+    const container = document.getElementById("App");
+    createTabsComponent(container, data);
+  }, []);
+  return <div id="App"></div>;
+};
 
 export default App;
